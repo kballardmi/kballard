@@ -9,20 +9,21 @@ purpose: Definition that finds the areas under two seperate gaussian
 
 University of Michigan
 """
+#imports
 from scipy.stats import norm
 
 #finds the area under the gaussians from on the discrimination line using normalcdf
 def neutronPhotonError(discrimLine, photonC, neutronC, photonS, neutronS):
     nError = 1
     pError = 0
-    newDiscrimLine = discrimLine 
+    newDiscrimLine = discrimLine
     #finds the delta (findDelta)
     delta = findDelta(discrimLine, photonC, neutronC, photonS, neutronS)
     newDiscrimLine = delta
-#    
+#
     #neutron to gamma error
     nError = norm(neutronC, neutronS).cdf(newDiscrimLine)
-    
+
     #gamma to neutron error
     pError = 1 - norm(photonC, photonS).cdf(newDiscrimLine)
 
@@ -32,10 +33,5 @@ def neutronPhotonError(discrimLine, photonC, neutronC, photonS, neutronS):
 def findDelta(discrimLine, photonC, neutronC, photonS, neutronS):
     num = (photonC * neutronS) + (neutronC * photonS)
     denom =  neutronS + photonS
-    delta = (num / denom) 
+    delta = (num / denom)
     return delta
-    
-    
-    
-    
-    

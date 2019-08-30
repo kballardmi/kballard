@@ -19,7 +19,21 @@ How to use this code:
     The code will gather the data in chunks and will save the data's PSD in a large array 
     based on the data's channel and energy. It will then use the array to go through the 
     rest of the code. 
+    
+    This code will produce a lot of graphs that are not shown, to see them go to the location of your save path. 
+    If the code is run another time these graphs will be changed if they are not put in a seperate folder or if the 
+    save path was not changed. The last graph printed can be useful to look at if problem 1 occurs. 
+    
 
+How to make graphs of specific sections of data:
+           Open psdAnalysis and set the types of graphs you want to 'True'.
+           psdConstants will need to be set up with 'Rows' equal to the amount of data that you want,
+           and 'SAVEPATH' set to where you want the graphs to be saved. 
+           
+           You will have to change 'raw graph' in psdAnalysis to set up different types of graphs. 
+           
+           'density plot' is preset to do a plot of psd vs integral. If you want to plot something else
+           open densityPlot_v4 and change what x and y equal. 
 
 strengths:
     Can be run without data after the inital run with data, as long as the bin sizes

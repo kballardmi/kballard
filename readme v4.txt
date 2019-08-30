@@ -19,3 +19,28 @@ How to use this code:
     The code will gather the data in chunks and will save the data's PSD in a large array 
     based on the data's channel and energy. It will then use the array to go through the 
     rest of the code. 
+
+
+strengths:
+    Can be run without data after the inital run with data, as long as the bin sizes
+        are not changed. This can cut down on the time it takes the code to process. 
+    Only psdConstants and psdMisclassification have to be changed run different things. 
+
+weaknesses:
+    There is a dependance on having close to correct center guesses, idealy we 
+        would have a list of ideal centers for each seperate graph. 
+    The gaussians are graphed seperately instead of at the same time. 
+    
+Probelm Checks:
+   1 "optimize warning...calls to function over 800":
+        centers are off, write "thisChannel" in the terminal
+        if thisChannel is below 40:
+            change centers 0 or 1 
+        if above 40:
+            change centers 2 or 3
+        new centers can be tested by copying all of line 87 in 
+        psdMisclassification into the terminal, if the error reoccurs continue 
+        trying new centers
+    
+    
+    

@@ -32,7 +32,7 @@ weaknesses:
     The gaussians are graphed seperately instead of at the same time. 
     
 Probelm Checks:
-   1 "optimize warning...calls to function over 800":
+   1 "optimal perameters not found.... 800":
         centers are off, write "thisChannel" in the terminal
         if thisChannel is below 40:
             change centers 0 or 1 
